@@ -26,13 +26,14 @@ nodes:
         options:
           entry: scriptlets/+python#1.py
           spawn: false
+    description: Preview charts using Scriptlets
   - task: read-file::url-download-to-path
     title: "Url Download To Path #1"
     node_id: url-download-to-path#1
     inputs_from:
       - handle: url
         value: https://raw.githubusercontent.com/plotly/datasets/master/api_docs/mt_bruno_elevation.csv
-    description: Download files to local
+    description: Download files to local using download package
   - task:
       ui:
         default_width: 450
@@ -83,6 +84,7 @@ nodes:
         from_node:
           - node_id: url-download-to-path#2
             output_handle: adress
+    description: Collect and export data using Scriptlet
   - task: self::image-preview
     title: "Image Preview #3"
     node_id: image-preview#3
@@ -91,6 +93,7 @@ nodes:
         from_node:
           - node_id: +python#2
             output_handle: image
+    description: "Preview image using Shared Block "
   - task: oomol-preview::audio-preview
     title: "Audio preview #2"
     node_id: audio-preview#2
@@ -99,6 +102,7 @@ nodes:
         from_node:
           - node_id: +python#2
             output_handle: audio
+    description: Preview audio using preview package
   - task: oomol-preview::video-preview
     title: "Video preview #3"
     node_id: video-preview#3
@@ -107,6 +111,7 @@ nodes:
         from_node:
           - node_id: +python#2
             output_handle: video
+    description: Preview video using preview package
   - task: data-analysis-examples::read_csv_to_df
     title: "read_csv_to_df #1"
     node_id: read_csv_to_df#1
@@ -115,13 +120,14 @@ nodes:
         from_node:
           - node_id: +python#2
             output_handle: csv_file_3d
+    description: Preview DataFrame using preview package
   - task: read-file::url-download-to-path
     title: "Url Download To Path #2"
     node_id: url-download-to-path#2
     inputs_from:
       - handle: url
         value: https://oomol-flows.oss-cn-hangzhou.aliyuncs.com/principle.md
-    description: Download files to local
+    description: Download files to local using download package
   - task: oomol-preview::markdown-preview
     title: "Markdown preview #1"
     node_id: markdown-preview#1
@@ -130,3 +136,4 @@ nodes:
         from_node:
           - node_id: +python#2
             output_handle: markdown
+    description: Preview markdown using preview package
