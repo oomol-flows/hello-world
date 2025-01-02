@@ -1,0 +1,63 @@
+{
+  "nodes": {
+    "url-download-to-path#1": {
+      "contentWidth": 450,
+      "rfNode": {
+        "position": {
+          "x": 0,
+          "y": 305.5
+        }
+      }
+    },
+    "read_csv_to_df#1": {
+      "contentWidth": 450,
+      "rfNode": {
+        "position": {
+          "x": 561.5,
+          "y": 55
+        }
+      }
+    },
+    "column_number_filter#1": {
+      "contentWidth": 530,
+      "rfNode": {
+        "position": {
+          "x": 1123,
+          "y": 14.5
+        }
+      }
+    },
+    "plot_bar_chart#1": {
+      "contentWidth": 530,
+      "rfNode": {
+        "position": {
+          "x": 1717,
+          "y": 0
+        }
+      }
+    },
+    "url-download-to-path#2": {
+      "contentWidth": 450,
+      "rfNode": {
+        "position": {
+          "x": 0,
+          "y": 1087.5
+        }
+      }
+    },
+    "+python#1": {
+      "contentWidth": 544.766188324692,
+      "rfNode": {
+        "position": {
+          "x": 514,
+          "y": 814
+        }
+      },
+      "sections": {
+        "scriptlet": {
+          "cardCollapsed": true
+        }
+      }
+    }
+  }
+}

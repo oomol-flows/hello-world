@@ -1,0 +1,17 @@
+inputs_def:
+  - handle: image
+    description: Input
+    json_schema:
+      type: string
+      ui:widget: file
+outputs_def:
+  []
+ui:
+  default_width: 450
+executor:
+  name: nodejs
+  options:
+    spawn: false
+    entry: main.ts
+title: Image Preview
+icon: ":skill-icons:typescript:"
