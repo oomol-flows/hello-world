@@ -1,48 +1,14 @@
 nodes:
-  - node_id: +python#1
-    node_type: task_node
-    title: "Python #2"
-    inputs_from:
-      - handle: geological_data
-        value: ""
-        from_node:
-          - node_id: +python#2
-            output_handle: csv_file_3d
-    task:
-      ui:
-        default_width: 450
-      inputs_def:
-        - handle: geological_data
-          description: Input
-          json_schema:
-            type: string
-      outputs_def:
-        - handle: output
-          description: Output
-          json_schema:
-            type: string
-      executor:
-        name: python
-        options:
-          entry: scriptlets/+python#1.py
-          spawn: false
-    description: Preview charts using Scriptlets
-  - task: read-file::url-download-to-path
-    title: "Url Download To Path #1"
-    node_id: url-download-to-path#1
-    inputs_from:
-      - handle: url
-        value: https://raw.githubusercontent.com/plotly/datasets/master/api_docs/mt_bruno_elevation.csv
-    description: Download files to local using download package
   - task:
       ui:
         default_width: 450
       inputs_def:
-        - handle: csv_file_3d
-          description: Input
+        - handle: markdown
           json_schema:
             type: string
-        - handle: markdown
+            ui:widget: file
+          value: ""
+        - handle: csv_file_3d
           json_schema:
             type: string
             ui:widget: file
@@ -112,15 +78,6 @@ nodes:
           - node_id: +python#2
             output_handle: video
     description: Preview video using preview package
-  - task: data-analysis-examples::read_csv_to_df
-    title: "read_csv_to_df #1"
-    node_id: read_csv_to_df#1
-    inputs_from:
-      - handle: csv
-        from_node:
-          - node_id: +python#2
-            output_handle: csv_file_3d
-    description: Preview DataFrame using preview package
   - task: read-file::url-download-to-path
     title: "Url Download To Path #2"
     node_id: url-download-to-path#2
@@ -137,3 +94,37 @@ nodes:
           - node_id: +python#2
             output_handle: markdown
     description: Preview markdown using preview package
+  - task: read-file::url-download-to-path
+    title: "Url Download To Path #1"
+    node_id: url-download-to-path#1
+    inputs_from:
+      - handle: url
+        value: https://raw.githubusercontent.com/plotly/datasets/master/api_docs/mt_bruno_elevation.csv
+  - node_id: +python#1
+    node_type: task_node
+    title: "Python #4"
+    description: Preview charts using Scriptlets
+    inputs_from:
+      - handle: geological_data
+        value: ""
+        from_node:
+          - node_id: +python#2
+            output_handle: csv_file_3d
+    task:
+      ui:
+        default_width: 450
+      inputs_def:
+        - handle: geological_data
+          description: Input
+          json_schema:
+            type: string
+      outputs_def:
+        - handle: output
+          description: Output
+          json_schema:
+            type: string
+      executor:
+        name: python
+        options:
+          entry: scriptlets/+python#1.py
+          spawn: false

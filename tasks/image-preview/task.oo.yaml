@@ -5,7 +5,9 @@ inputs_def:
       type: string
       ui:widget: file
 outputs_def:
-  []
+  - handle: output
+    json_schema:
+      type: string
 ui:
   default_width: 450
 executor:
@@ -14,4 +16,4 @@ executor:
     spawn: false
     entry: main.ts
 title: Image Preview
-icon: ":skill-icons:typescript:"
+icon: ":fa6-solid:image:"

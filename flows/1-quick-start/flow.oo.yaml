@@ -27,7 +27,7 @@ nodes:
       - handle: column_name
         value: income
       - handle: min_threshold
-        value: 15000
+        value: 10000
       - handle: max_threshold
         value: 20000
     description: Support filtering the "income" column through UI operations
@@ -45,5 +45,5 @@ nodes:
       - handle: y_column
         value: life expectancy
       - handle: color
-        value: "#3336C5"
+        value: "#33C4A1"
     description: Draw a bar chart
