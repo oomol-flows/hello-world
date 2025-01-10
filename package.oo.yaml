@@ -1,0 +1,16 @@
+version: 0.0.4
+scripts:
+  # Script executed when the container is first loaded
+  # eg: bootstrap: pip install pandas
+  bootstrap: |
+    pnpm install && pip install -r requirements.txt
+icon: ":twemoji:party-popper:currentColor:"
+dependencies:
+  read-file: 0.0.2
+  data-analysis-examples: 0.0.2
+  oomol-preview: 0.0.1
+name: hello-world
+description: Quickly help everyone understand the core capabilities of oomol
+displayName: Hello World
+releaseNotes: "update release type to project "
+releaseType: project

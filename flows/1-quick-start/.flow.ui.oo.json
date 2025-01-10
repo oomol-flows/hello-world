@@ -1,0 +1,58 @@
+{
+  "nodes": {
+    "url-download-to-path#1": {
+      "contentWidth": 450,
+      "rfNode": {
+        "position": {
+          "x": 0,
+          "y": 36
+        }
+      }
+    },
+    "read_csv_to_df#1": {
+      "contentWidth": 450,
+      "rfNode": {
+        "position": {
+          "x": 514,
+          "y": 54
+        }
+      }
+    },
+    "column_number_filter#1": {
+      "contentWidth": 530,
+      "rfNode": {
+        "position": {
+          "x": 1028,
+          "y": 13.5
+        }
+      }
+    },
+    "plot_bar_chart#1": {
+      "contentWidth": 530,
+      "rfNode": {
+        "position": {
+          "x": 1622,
+          "y": 0
+        }
+      }
+    },
+    "url-download-to-path#2": {
+      "contentWidth": 450,
+      "rfNode": {
+        "position": {
+          "x": -195.3413672611494,
+          "y": 983.6448666915401
+        }
+      }
+    },
+    "+python#1": {
+      "contentWidth": 544.766188324692,
+      "rfNode": {
+        "position": {
+          "x": 482.65232890082723,
+          "y": 937.8734213935534
+        }
+      }
+    }
+  }
+}

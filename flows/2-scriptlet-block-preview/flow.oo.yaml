@@ -1,0 +1,130 @@
+nodes:
+  - task:
+      ui:
+        default_width: 450
+      inputs_def:
+        - handle: markdown
+          json_schema:
+            type: string
+            ui:widget: file
+          value: ""
+        - handle: csv_file_3d
+          json_schema:
+            type: string
+            ui:widget: file
+          value: ""
+      outputs_def:
+        - handle: csv_file_3d
+          description: Output
+          json_schema:
+            type: string
+            ui:widget: file
+        - handle: image
+          json_schema:
+            type: string
+        - handle: video
+          json_schema:
+            type: string
+            ui:widget: file
+        - handle: audio
+          json_schema:
+            type: string
+            ui:widget: file
+        - handle: markdown
+          json_schema:
+            type: string
+            ui:widget: file
+      executor:
+        name: python
+        options:
+          entry: scriptlets/+python#2.py
+    title: "Python #2"
+    icon: ":logos:python:"
+    node_id: +python#2
+    inputs_from:
+      - handle: csv_file_3d
+        from_node:
+          - node_id: url-download-to-path#1
+            output_handle: adress
+      - handle: markdown
+        from_node:
+          - node_id: url-download-to-path#2
+            output_handle: adress
+    description: Collect and export data using Scriptlet
+  - task: self::image-preview
+    title: "Image Preview #3"
+    node_id: image-preview#3
+    inputs_from:
+      - handle: image
+        from_node:
+          - node_id: +python#2
+            output_handle: image
+    description: "Preview image using Shared Block "
+  - task: oomol-preview::audio-preview
+    title: "Audio preview #2"
+    node_id: audio-preview#2
+    inputs_from:
+      - handle: audio_path
+        from_node:
+          - node_id: +python#2
+            output_handle: audio
+    description: Preview audio using preview package
+  - task: oomol-preview::video-preview
+    title: "Video preview #3"
+    node_id: video-preview#3
+    inputs_from:
+      - handle: video_path
+        from_node:
+          - node_id: +python#2
+            output_handle: video
+    description: Preview video using preview package
+  - task: read-file::url-download-to-path
+    title: "Url Download To Path #2"
+    node_id: url-download-to-path#2
+    inputs_from:
+      - handle: url
+        value: https://oomol-flows.oss-cn-hangzhou.aliyuncs.com/principle.md
+    description: Download files to local using download package
+  - task: oomol-preview::markdown-preview
+    title: "Markdown preview #1"
+    node_id: markdown-preview#1
+    inputs_from:
+      - handle: text
+        from_node:
+          - node_id: +python#2
+            output_handle: markdown
+    description: Preview markdown using preview package
+  - task: read-file::url-download-to-path
+    title: "Url Download To Path #1"
+    node_id: url-download-to-path#1
+    inputs_from:
+      - handle: url
+        value: https://raw.githubusercontent.com/plotly/datasets/master/api_docs/mt_bruno_elevation.csv
+  - node_id: +python#1
+    node_type: task_node
+    title: "Python #4"
+    description: Preview charts using Scriptlets
+    inputs_from:
+      - handle: geological_data
+        value: ""
+        from_node:
+          - node_id: +python#2
+            output_handle: csv_file_3d
+    task:
+      ui:
+        default_width: 450
+      inputs_def:
+        - handle: geological_data
+          description: Input
+          json_schema:
+            type: string
+      outputs_def:
+        - handle: output
+          description: Output
+          json_schema:
+            type: string
+      executor:
+        name: python
+        options:
+          entry: scriptlets/+python#1.py
+          spawn: false

@@ -1,0 +1,81 @@
+{
+  "nodes": {
+    "+python#1": {
+      "contentWidth": 544.766188324692,
+      "rfNode": {
+        "position": {
+          "x": 704.6216621527965,
+          "y": 28.496658118617276
+        }
+      },
+      "sections": {
+        "scriptlet": {
+          "cardCollapsed": true
+        }
+      }
+    },
+    "url-download-to-path#1": {
+      "contentWidth": 450,
+      "rfNode": {
+        "position": {
+          "x": -521.0273519170494,
+          "y": 54
+        }
+      }
+    },
+    "+python#2": {
+      "contentWidth": 450,
+      "rfNode": {
+        "position": {
+          "x": 52.0614971274847,
+          "y": 54
+        }
+      }
+    },
+    "image-preview#3": {
+      "contentWidth": 450,
+      "rfNode": {
+        "position": {
+          "x": 1350.7100831967439,
+          "y": 218.0144840408481
+        }
+      }
+    },
+    "audio-preview#2": {
+      "contentWidth": 450,
+      "rfNode": {
+        "position": {
+          "x": 1988.5947206839128,
+          "y": 62.73749984269453
+        }
+      }
+    },
+    "video-preview#3": {
+      "contentWidth": 450,
+      "rfNode": {
+        "position": {
+          "x": 1971.853629931412,
+          "y": 559.9441945585168
+        }
+      }
+    },
+    "read_csv_to_df#1": {
+      "contentWidth": 595.6367388216705,
+      "rfNode": {
+        "position": {
+          "x": 771.2367261288321,
+          "y": 879.9443310603513
+        }
+      }
+    },
+    "url-download-to-path#2": {
+      "contentWidth": 450,
+      "rfNode": {
+        "position": {
+          "x": -495,
+          "y": 420
+        }
+      }
+    }
+  }
+}
