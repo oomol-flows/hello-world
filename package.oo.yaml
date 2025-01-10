@@ -1,4 +1,4 @@
-version: 0.0.4
+version: 0.0.5
 scripts:
   # Script executed when the container is first loaded
   # eg: bootstrap: pip install pandas
@@ -14,3 +14,4 @@ description: Quickly help everyone understand the core capabilities of oomol
 displayName: Hello World
 releaseNotes: "update release type to project "
 releaseType: project
+repository: https://github.com/oomol-flows/hello-world
