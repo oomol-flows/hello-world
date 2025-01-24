@@ -1,49 +1,57 @@
 nodes:
-  - task: read-file::url-download-to-path
-    title: "Url Download To Path #1"
-    node_id: url-download-to-path#1
-    inputs_from:
-      - handle: url
-        value: https://oomol-flows.oss-cn-hangzhou.aliyuncs.com/data_test_oomols.csv
-    description: '"URL Download To Path" is a package downloaded from the store,
-      which can be used without writing code yourself. You can install it
-      through the toolbar on the right.'
-  - task: data-analysis-examples::read_csv_to_df
-    title: "read_csv_to_df #1"
-    node_id: read_csv_to_df#1
+  - task: data-lab::csv_to_df
+    title: "Csv To Df #1"
+    node_id: csv_to_df#1
     inputs_from:
       - handle: csv
         from_node:
-          - node_id: url-download-to-path#1
-            output_handle: adress
-    description: Read the csv file into a “pandas dataframe” object and preview it
-  - task: data-analysis-examples::column_number_filter
-    node_id: column_number_filter#1
+          - node_id: url_to_path#1
+            output_handle: address
+    description: Read the CSV as the DataFrame object of pandas
+  - task: data-lab::df_preview
+    title: "DF Preview #1"
+    node_id: df_preview#1
     inputs_from:
       - handle: df
         from_node:
-          - node_id: read_csv_to_df#1
+          - node_id: csv_to_df#1
             output_handle: df
-      - handle: column_name
-        value: income
-      - handle: min_threshold
-        value: 10000
-      - handle: max_threshold
-        value: 20000
-    description: Support filtering the "income" column through UI operations
-  - task: data-analysis-examples::plot_bar_chart
-    node_id: plot_bar_chart#1
+  - task: data-lab::bar_chart
+    title: "Bar Chart #1"
+    node_id: bar_chart#1
     inputs_from:
       - handle: df
         from_node:
           - node_id: column_number_filter#1
             output_handle: df
-      - handle: title
-        value: country & life expectancy
-      - handle: x_column
+      - handle: x
         value: country
-      - handle: y_column
+      - handle: y
         value: life expectancy
-      - handle: color
-        value: "#33C4A1"
-    description: Draw a bar chart
+      - handle: chart_title
+        value: country & life expectancy
+  - task: data-lab::column_number_filter
+    title: "Column Number Filter #1"
+    node_id: column_number_filter#1
+    inputs_from:
+      - handle: df
+        from_node:
+          - node_id: csv_to_df#1
+            output_handle: df
+      - handle: column_name
+        value: income
+      - handle: min_threshold
+        value: 15000
+      - handle: max_threshold
+        value: 20000
+      - handle: preview
+        value: false
+  - task: oomol-file::url_to_path
+    title: "URL to path  #1"
+    node_id: url_to_path#1
+    inputs_from:
+      - handle: url
+        value: https://oomol-flows.oss-cn-hangzhou.aliyuncs.com/data_test_oomols.csv
+    description: '"URL To Path" is a package downloaded from the store, which can be
+      used without writing code yourself. You can install it through the toolbar
+      on the right.'

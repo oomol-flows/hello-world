@@ -45,39 +45,12 @@ nodes:
       - handle: csv_file_3d
         from_node:
           - node_id: url-download-to-path#1
-            output_handle: adress
+            output_handle: address
       - handle: markdown
         from_node:
           - node_id: url-download-to-path#2
-            output_handle: adress
+            output_handle: address
     description: Collect and export data using Scriptlet
-  - task: self::image-preview
-    title: "Image Preview #3"
-    node_id: image-preview#3
-    inputs_from:
-      - handle: image
-        from_node:
-          - node_id: +python#2
-            output_handle: image
-    description: "Preview image using Shared Block "
-  - task: oomol-preview::audio-preview
-    title: "Audio preview #2"
-    node_id: audio-preview#2
-    inputs_from:
-      - handle: audio_path
-        from_node:
-          - node_id: +python#2
-            output_handle: audio
-    description: Preview audio using preview package
-  - task: oomol-preview::video-preview
-    title: "Video preview #3"
-    node_id: video-preview#3
-    inputs_from:
-      - handle: video_path
-        from_node:
-          - node_id: +python#2
-            output_handle: video
-    description: Preview video using preview package
   - task: read-file::url-download-to-path
     title: "Url Download To Path #2"
     node_id: url-download-to-path#2
@@ -85,15 +58,6 @@ nodes:
       - handle: url
         value: https://oomol-flows.oss-cn-hangzhou.aliyuncs.com/principle.md
     description: Download files to local using download package
-  - task: oomol-preview::markdown-preview
-    title: "Markdown preview #1"
-    node_id: markdown-preview#1
-    inputs_from:
-      - handle: text
-        from_node:
-          - node_id: +python#2
-            output_handle: markdown
-    description: Preview markdown using preview package
   - task: read-file::url-download-to-path
     title: "Url Download To Path #1"
     node_id: url-download-to-path#1
@@ -128,3 +92,35 @@ nodes:
         options:
           entry: scriptlets/+python#1.py
           spawn: false
+  - task: oomol-preview::audio_preview
+    title: "Audio preview #1"
+    node_id: audio_preview#1
+    inputs_from:
+      - handle: audio_path
+        from_node:
+          - node_id: +python#2
+            output_handle: audio
+  - task: oomol-preview::video_preview
+    title: "Video preview #1"
+    node_id: video_preview#1
+    inputs_from:
+      - handle: video_path
+        from_node:
+          - node_id: +python#2
+            output_handle: video
+  - task: oomol-preview::markdown_text_preview
+    title: "Markdown preview #1"
+    node_id: markdown_text_preview#1
+    inputs_from:
+      - handle: text
+        from_node:
+          - node_id: +python#2
+            output_handle: markdown
+  - task: oomol-preview::image_preview
+    title: "Image preview #1"
+    node_id: image_preview#1
+    inputs_from:
+      - handle: image_path
+        from_node:
+          - node_id: +python#2
+            output_handle: image
