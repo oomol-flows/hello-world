@@ -24,12 +24,12 @@ nodes:
         from_node:
           - node_id: column_number_filter#1
             output_handle: df
-      - handle: x
-        value: country
-      - handle: y
-        value: life expectancy
       - handle: chart_title
-        value: country & life expectancy
+        value:
+      - handle: y_column
+        value:
+      - handle: x_column
+        value: country
   - task: data-lab::column_number_filter
     title: "Column Number Filter #1"
     node_id: column_number_filter#1
@@ -45,7 +45,7 @@ nodes:
       - handle: max_threshold
         value: 20000
       - handle: preview
-        value: false
+        value: true
   - task: oomol-file::url_to_path
     title: "URL to path  #1"
     node_id: url_to_path#1
