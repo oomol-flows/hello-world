@@ -1,4 +1,4 @@
-version: 0.0.9
+version: 0.0.11
 scripts:
   # Script executed when the container is first loaded
   # eg: bootstrap: pip install pandas
@@ -9,9 +9,10 @@ dependencies:
   oomol-preview: 0.0.2
   data-lab: 0.0.6
   oomol-file: 0.0.7
+  read-file: 0.0.10
 name: hello-world
 description: Quickly help everyone understand the core capabilities of oomol
 displayName: Hello World
-releaseNotes: fix bug and update config
+releaseNotes: update md url
 releaseType: project
 repository: https://github.com/oomol-flows/hello-world

@@ -48,22 +48,9 @@ nodes:
             output_handle: address
       - handle: markdown
         from_node:
-          - node_id: url-download-to-path#2
+          - node_id: url_to_path#1
             output_handle: address
     description: Collect and export data using Scriptlet
-  - task: read-file::url-download-to-path
-    title: "Url Download To Path #2"
-    node_id: url-download-to-path#2
-    inputs_from:
-      - handle: url
-        value: https://oomol-flows.oss-cn-hangzhou.aliyuncs.com/principle.md
-    description: Download files to local using download package
-  - task: read-file::url-download-to-path
-    title: "Url Download To Path #1"
-    node_id: url-download-to-path#1
-    inputs_from:
-      - handle: url
-        value: https://raw.githubusercontent.com/plotly/datasets/master/api_docs/mt_bruno_elevation.csv
   - node_id: +python#1
     node_type: task_node
     title: "Python #4"
@@ -124,3 +111,15 @@ nodes:
         from_node:
           - node_id: +python#2
             output_handle: image
+  - task: oomol-file::url_to_path
+    title: "URL to path  #1"
+    node_id: url_to_path#1
+    inputs_from:
+      - handle: url
+        value: https://oomol-flows.oss-cn-hangzhou.aliyuncs.com/principle.md
+  - task: read-file::url-download-to-path
+    title: "Url Download To Path #1"
+    node_id: url-download-to-path#1
+    inputs_from:
+      - handle: url
+        value: https://raw.githubusercontent.com/plotly/datasets/master/api_docs/mt_bruno_elevation.csv
