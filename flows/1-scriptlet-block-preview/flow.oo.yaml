@@ -44,7 +44,7 @@ nodes:
     inputs_from:
       - handle: csv_file_3d
         from_node:
-          - node_id: url-download-to-path#1
+          - node_id: url_to_path#2
             output_handle: address
       - handle: markdown
         from_node:
@@ -70,10 +70,10 @@ nodes:
           json_schema:
             type: string
       outputs_def:
-        - handle: output
+        - handle: df
           description: Output
           json_schema:
-            type: string
+            contentMediaType: oomol/var
       executor:
         name: python
         options:
@@ -117,9 +117,17 @@ nodes:
     inputs_from:
       - handle: url
         value: https://oomol-flows.oss-cn-hangzhou.aliyuncs.com/principle.md
-  - task: read-file::url-download-to-path
-    title: "Url Download To Path #1"
-    node_id: url-download-to-path#1
+  - task: oomol-file::url_to_path
+    title: "URL to path  #2"
+    node_id: url_to_path#2
     inputs_from:
       - handle: url
-        value: https://raw.githubusercontent.com/plotly/datasets/master/api_docs/mt_bruno_elevation.csv
+        value: https://oomol-flows.oss-cn-hangzhou.aliyuncs.com/1740470911_mt_bruno_elevation.csv
+  - task: self::df-preview
+    title: "DF Preview #1"
+    node_id: df-preview#1
+    inputs_from:
+      - handle: df
+        from_node:
+          - node_id: +python#1
+            output_handle: df

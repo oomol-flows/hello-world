@@ -1,7 +1,7 @@
 # Hello World
 
-This is a typical case of using oomol studio to help everyone understand the product functions.
+English | [中文](./README_zh-CN.md)
 
-![screen_1](./image/hello_world_1.jpg)
+## Introduction
 
-![screen_1](./image/hello_world_2.jpg)
+This is a classic case that helps users get started with OOMOL Studio quickly.

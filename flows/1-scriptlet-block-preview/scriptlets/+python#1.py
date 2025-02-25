@@ -24,4 +24,4 @@ def main(inputs: dict, context: Context):
     )
 
     fig.show()
-    return {"output": None}
+    return {"df": z_data}

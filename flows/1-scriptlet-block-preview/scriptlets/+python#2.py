@@ -1,24 +1,29 @@
-from calendar import c
-import re
+# Import necessary module from oocana
 from oocana import Context
 
+# Function to read a markdown file
 def read_markdown_file(file_path):
   try:
       with open(file_path, 'r', encoding='utf-8') as file:
           return file.read()
   except FileNotFoundError:
-      print(f"Error: 文件 {file_path} 未找到。")
+      print(f"Error: File {file_path} not found.")
       return None
   except Exception as e:
-      print(f"Error: 读取文件时发生错误 - {e}")
+      print(f"Error: An error occurred while reading the file - {e}")
       return None
 
-
+# Main function that takes parameters and context as input
 def main(params: dict, context: Context):
+  # Extract required parameters
   csv_file_3d = params.get("csv_file_3d")
   markdown_file = params.get("markdown")
+
+  # Check if required parameters are present
   if csv_file_3d is None or markdown_file is None:
-    raise ValueError("3d_csv_filr parameter is required")
+    raise ValueError("The parameter 3d_csv_filr is required")
+
+  # Return a dictionary containing various media URLs and markdown content
   return { 
     "csv_file_3d": csv_file_3d,
     "image": "https://oomol-flows.oss-cn-hangzhou.aliyuncs.com/colin-watts-2fWZ9jsoIe0-unsplash.jpg",

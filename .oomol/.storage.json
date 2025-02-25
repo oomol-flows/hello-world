@@ -3,18 +3,11 @@
     "viewMode": "events",
     "sessionViewMode": "current"
   },
-  "designer/flow/1-quick-start": {
+  "designer/flow/1-scriptlet-block-preview": {
     "viewport": {
-      "x": 151.03667459386156,
-      "y": -122.20571085922404,
-      "zoom": 0.4839483782794158
-    }
-  },
-  "designer/flow/2-scriptlet-block-preview": {
-    "viewport": {
-      "x": -339.2081805627457,
-      "y": -865.9968243250983,
-      "zoom": 0.7959763870966269
+      "x": 271.79737226334845,
+      "y": -21.02327826980843,
+      "zoom": 0.25817067967074675
     }
   }
 }

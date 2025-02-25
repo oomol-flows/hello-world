@@ -1,0 +1,16 @@
+inputs_def:
+  - handle: df
+    description: Input
+    json_schema:
+      contentMediaType: oomol/var
+outputs_def:
+  []
+ui:
+  default_width: 450
+executor:
+  name: python
+  options:
+    spawn: false
+    entry: __init__.py
+title: DF Preview
+icon: ":fa6-solid:table:"
