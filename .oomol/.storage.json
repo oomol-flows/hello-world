@@ -1,13 +1,12 @@
 {
   "oocana-log-panel": {
-    "viewMode": "events",
-    "sessionViewMode": "current"
+    "viewMode": "events"
   },
   "designer/flow/1-scriptlet-block-preview": {
     "viewport": {
-      "x": 271.79737226334845,
-      "y": -21.02327826980843,
-      "zoom": 0.25817067967074675
+      "x": -374.32991516287893,
+      "y": -691.4595161992711,
+      "zoom": 0.6150145437841655
     }
   }
 }

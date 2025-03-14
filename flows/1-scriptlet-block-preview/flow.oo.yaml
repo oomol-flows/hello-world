@@ -44,12 +44,12 @@ nodes:
     inputs_from:
       - handle: csv_file_3d
         from_node:
-          - node_id: url_to_path#2
-            output_handle: address
+          - node_id: +value#1
+            output_handle: url
       - handle: markdown
         from_node:
-          - node_id: url_to_path#1
-            output_handle: address
+          - node_id: +value#2
+            output_handle: url
     description: Collect and export data using Scriptlet
   - node_id: +python#1
     node_type: task_node
@@ -111,18 +111,6 @@ nodes:
         from_node:
           - node_id: +python#2
             output_handle: image
-  - task: oomol-file::url_to_path
-    title: "URL to path  #1"
-    node_id: url_to_path#1
-    inputs_from:
-      - handle: url
-        value: https://oomol-flows.oss-cn-hangzhou.aliyuncs.com/principle.md
-  - task: oomol-file::url_to_path
-    title: "URL to path  #2"
-    node_id: url_to_path#2
-    inputs_from:
-      - handle: url
-        value: https://oomol-flows.oss-cn-hangzhou.aliyuncs.com/1740470911_mt_bruno_elevation.csv
   - task: self::df-preview
     title: "DF Preview #1"
     node_id: df-preview#1
@@ -131,3 +119,18 @@ nodes:
         from_node:
           - node_id: +python#1
             output_handle: df
+  - values:
+      - handle: url
+        json_schema:
+          type: string
+        value: https://oomol-flows.oss-cn-hangzhou.aliyuncs.com/1740470911_mt_bruno_elevation.csv
+    title: "Value #1"
+    node_id: +value#1
+  - node_id: +value#2
+    node_type: value_node
+    title: "Value #2"
+    values:
+      - handle: url
+        json_schema:
+          type: string
+        value: https://oomol-flows.oss-cn-hangzhou.aliyuncs.com/principle.md
