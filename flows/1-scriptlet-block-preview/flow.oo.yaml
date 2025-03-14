@@ -44,12 +44,12 @@ nodes:
     inputs_from:
       - handle: csv_file_3d
         from_node:
-          - node_id: +value#1
-            output_handle: url
+          - node_id: url_to_file#3
+            output_handle: file_path
       - handle: markdown
         from_node:
-          - node_id: +value#2
-            output_handle: url
+          - node_id: url_to_file#2
+            output_handle: file_path
     description: Collect and export data using Scriptlet
   - node_id: +python#1
     node_type: task_node
@@ -133,4 +133,43 @@ nodes:
       - handle: url
         json_schema:
           type: string
+          pattern: https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)
         value: https://oomol-flows.oss-cn-hangzhou.aliyuncs.com/principle.md
+  - task: oomol-file::url_to_file
+    title: "URL to file  #2"
+    node_id: url_to_file#2
+    inputs_from:
+      - handle: url
+        from_node:
+          - node_id: +value#2
+            output_handle: url
+      - handle: query
+        value:
+          {}
+      - handle: headers
+        value:
+          {}
+      - handle: timeout
+        value: 0
+      - handle: retry_times
+        value: 1
+  - task: oomol-file::url_to_file
+    title: "URL to file  #3"
+    node_id: url_to_file#3
+    inputs_from:
+      - handle: url
+        from_node:
+          - node_id: +value#1
+            output_handle: url
+      - handle: query
+        value:
+          {}
+        schema_overrides:
+          []
+      - handle: headers
+        value:
+          {}
+      - handle: timeout
+        value: 0
+      - handle: retry_times
+        value: 1
