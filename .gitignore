@@ -292,3 +292,4 @@ dist
 .pnp.*
 
 .oomol/
+.DS_Store
