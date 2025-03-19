@@ -11,6 +11,6 @@ dependencies:
 name: hello-world
 description: Quickly help everyone understand the core capabilities of oomol
 displayName: Hello World
-releaseNotes: update version
+releaseNotes: git test
 repository: https://github.com/oomol-flows/hello-world
 releaseType: project
