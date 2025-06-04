@@ -4,17 +4,8 @@
       "contentWidth": 570.5420807706117,
       "rfNode": {
         "position": {
-          "x": 993,
-          "y": 1518.5
-        }
-      }
-    },
-    "+python#1": {
-      "contentWidth": 532.5317490925232,
-      "rfNode": {
-        "position": {
-          "x": 1628,
-          "y": 0
+          "x": 997,
+          "y": 695
         }
       }
     },
@@ -22,8 +13,8 @@
       "contentWidth": 450,
       "rfNode": {
         "position": {
-          "x": 1669.5,
-          "y": 1399
+          "x": 1675.5,
+          "y": 0
         }
       }
     },
@@ -31,8 +22,8 @@
       "contentWidth": 450,
       "rfNode": {
         "position": {
-          "x": 1669.5,
-          "y": 1815
+          "x": 1675.5,
+          "y": 432
         }
       }
     },
@@ -40,16 +31,16 @@
       "contentWidth": 450,
       "rfNode": {
         "position": {
-          "x": 1669.5,
-          "y": 2277
+          "x": 1675.5,
+          "y": 910
         }
       }
     },
     "image_preview#1": {
       "rfNode": {
         "position": {
-          "x": 1684.5,
-          "y": 2902
+          "x": 1690.5,
+          "y": 1551
         }
       }
     },
@@ -57,8 +48,8 @@
       "contentWidth": 450,
       "rfNode": {
         "position": {
-          "x": 2225,
-          "y": 362.5
+          "x": 2233,
+          "y": 2194.5
         }
       }
     },
@@ -67,7 +58,7 @@
       "rfNode": {
         "position": {
           "x": 0,
-          "y": 1744.5
+          "y": 913
         }
       }
     },
@@ -76,7 +67,7 @@
       "rfNode": {
         "position": {
           "x": 0,
-          "y": 2174.5
+          "y": 1359
         }
       }
     },
@@ -84,8 +75,8 @@
       "contentWidth": 450,
       "rfNode": {
         "position": {
-          "x": 479,
-          "y": 2046
+          "x": 481,
+          "y": 1230.5
         }
       }
     },
@@ -93,8 +84,8 @@
       "contentWidth": 450,
       "rfNode": {
         "position": {
-          "x": 479,
-          "y": 1616
+          "x": 481,
+          "y": 784.5
         }
       },
       "sections": {
@@ -104,6 +95,15 @@
               "[]": false
             }
           }
+        }
+      }
+    },
+    "chart-preview#1": {
+      "contentWidth": 532.5317490925232,
+      "rfNode": {
+        "position": {
+          "x": 1634,
+          "y": 2146
         }
       }
     }

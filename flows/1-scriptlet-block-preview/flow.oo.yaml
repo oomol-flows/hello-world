@@ -51,34 +51,6 @@ nodes:
           - node_id: url_to_file#2
             output_handle: file_path
     description: Collect and export data using Scriptlet
-  - node_id: +python#1
-    node_type: task_node
-    title: "Python #4"
-    description: Preview charts using Scriptlets
-    inputs_from:
-      - handle: geological_data
-        value: ""
-        from_node:
-          - node_id: +python#2
-            output_handle: csv_file_3d
-    task:
-      ui:
-        default_width: 450
-      inputs_def:
-        - handle: geological_data
-          description: Input
-          json_schema:
-            type: string
-      outputs_def:
-        - handle: df
-          description: Output
-          json_schema:
-            contentMediaType: oomol/var
-      executor:
-        name: python
-        options:
-          entry: scriptlets/+python#1.py
-          spawn: false
   - task: oomol-preview::audio_preview
     title: "Audio preview #1"
     node_id: audio_preview#1
@@ -117,7 +89,7 @@ nodes:
     inputs_from:
       - handle: df
         from_node:
-          - node_id: +python#1
+          - node_id: chart-preview#1
             output_handle: df
   - values:
       - handle: url
@@ -173,3 +145,11 @@ nodes:
         value: 0
       - handle: retry_times
         value: 1
+  - node_id: chart-preview#1
+    task: self::chart-preview
+    inputs_from:
+      - handle: geological_data
+        value: ""
+        from_node:
+          - node_id: +python#2
+            output_handle: csv_file_3d
