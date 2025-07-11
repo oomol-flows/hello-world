@@ -6,9 +6,6 @@ English | [中文](./README_zh-CN.md)
 
 This is a classic case that helps users get started with OOMOL Studio quickly.
 
-<video width="100%" controls>
-  <source src="https://oomol-flows.oss-cn-hangzhou.aliyuncs.com/204565-924698132_small.mp4" type="video/mp4">
-  您的浏览器不支持 HTML5 视频标签
-</video>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QsAdiskxfXI?si=PW0tP-Cn3NLaGVDQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 This is a classic case that helps users get started with OOMOL Studio quickly.
