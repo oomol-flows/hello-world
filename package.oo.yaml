@@ -1,15 +1,15 @@
-version: 1.0.7
+version: 1.0.8
 scripts:
   # Script executed when the container is first loaded
   # eg: bootstrap: pip install pandas
   bootstrap: |
     pnpm install && pip install -r requirements.txt
-icon: ":twemoji:party-popper:currentColor:"
+icon: "./icon.png"
 dependencies:
   oomol-preview: 0.0.2
   oomol-file: 0.0.9
 name: hello-world
 description: Quickly help everyone understand the core capabilities of oomol
 displayName: Hello World
-releaseNotes: update flow
+releaseNotes: test video
 repository: https://github.com/oomol-flows/hello-world

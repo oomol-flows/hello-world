@@ -2,7 +2,7 @@
 import typing
 class Inputs(typing.TypedDict):
   df: typing.Any
-Outputs = typing.Any
+Outputs = typing.Dict[str, typing.Any]
 #endregion
 
 from oocana import Context
