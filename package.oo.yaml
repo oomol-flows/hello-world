@@ -1,4 +1,4 @@
-version: 1.0.14
+version: 1.0.15
 scripts:
   # Script executed when the container is first loaded
   # eg: bootstrap: pip install pandas
@@ -11,5 +11,5 @@ dependencies:
 name: hello-world
 description: Quickly help everyone understand the core capabilities of oomol
 displayName: Hello World
-releaseNotes: update
+releaseNotes: add ci
 repository: https://github.com/oomol-flows/hello-world
