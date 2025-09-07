@@ -1,4 +1,4 @@
-version: 1.0.16
+version: 1.0.17
 scripts:
   # Script executed when the container is first loaded
   # eg: bootstrap: pip install pandas
@@ -7,7 +7,7 @@ scripts:
 icon: "./icon.png"
 dependencies:
   oomol-preview: 0.1.4
-  oomol-file: 0.0.19
+  oomol-file: 0.0.20
 name: hello-world
 description: Quickly help everyone understand the core capabilities of oomol
 displayName: Hello World
