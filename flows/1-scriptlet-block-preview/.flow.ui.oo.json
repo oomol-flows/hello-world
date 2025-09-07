@@ -10,7 +10,7 @@
       }
     },
     "audio_preview#1": {
-      "contentWidth": 450,
+      "contentWidth": 350,
       "rfNode": {
         "position": {
           "x": 1675.5,
@@ -19,7 +19,7 @@
       }
     },
     "video_preview#1": {
-      "contentWidth": 450,
+      "contentWidth": 350,
       "rfNode": {
         "position": {
           "x": 1675.5,
@@ -28,7 +28,7 @@
       }
     },
     "markdown_text_preview#1": {
-      "contentWidth": 450,
+      "contentWidth": 350,
       "rfNode": {
         "position": {
           "x": 1675.5,
@@ -37,6 +37,7 @@
       }
     },
     "image_preview#1": {
+      "contentWidth": 350,
       "rfNode": {
         "position": {
           "x": 1690.5,
@@ -72,7 +73,7 @@
       }
     },
     "url_to_file#2": {
-      "contentWidth": 450,
+      "contentWidth": 350,
       "rfNode": {
         "position": {
           "x": 481,
@@ -81,20 +82,11 @@
       }
     },
     "url_to_file#3": {
-      "contentWidth": 450,
+      "contentWidth": 350,
       "rfNode": {
         "position": {
           "x": 481,
           "y": 685.5
-        }
-      },
-      "sections": {
-        "inputs": {
-          "collapsed": {
-            "query": {
-              "[]": false
-            }
-          }
         }
       }
     },
