@@ -13,4 +13,5 @@ executor:
     spawn: false
     entry: __init__.py
 title: DF Preview
+description: "This block is used to preview and display DataFrame data in a tabular format"
 icon: ":carbon:table-split:"

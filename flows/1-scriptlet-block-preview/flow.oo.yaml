@@ -125,6 +125,10 @@ nodes:
         value: 0
       - handle: retry_times
         value: 1
+      - handle: file_dir
+        value:
+      - handle: reset_filename
+        value: true
   - task: oomol-file::url_to_file
     title: "URL to file  #3"
     node_id: url_to_file#3
@@ -145,6 +149,10 @@ nodes:
         value: 0
       - handle: retry_times
         value: 1
+      - handle: file_dir
+        value:
+      - handle: reset_filename
+        value: true
   - node_id: chart-preview#1
     task: self::chart-preview
     inputs_from:

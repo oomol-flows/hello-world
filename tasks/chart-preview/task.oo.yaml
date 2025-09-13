@@ -15,5 +15,6 @@ executor:
   options:
     entry: __init__.py
     spawn: false
-description: Preview charts using Scriptlets
+description: "This block is used to preview and display charts from geological
+  data using interactive scriptlets"
 icon: ":carbon:chart-area:"
